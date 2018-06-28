@@ -1707,7 +1707,7 @@ Return `true` if and only if all values of `type1` are also of `type2`. Can also
 using the `<:` infix operator as `type1 <: type2`.
 
 ```jldoctest
-julia> issubtype(Int8, Int32)
+julia> Int8 <: Int32
 false
 
 julia> Int8 <: Integer
