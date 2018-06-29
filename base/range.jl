@@ -209,7 +209,7 @@ end
 Construct a range of `n` linearly spaced elements from `start` to `stop`.
 
 ```jldoctest
-julia> linspace(1.3,2.9,9)
+julia> range(1.3, stop=2.9, length=9)
 1.3:0.2:2.9
 ```
 """
@@ -294,7 +294,7 @@ end
 Construct a vector of `n` logarithmically spaced numbers from `10^start` to `10^stop`.
 
 ```jldoctest
-julia> logspace(1.,10.,5)
+julia> exp10.(range(1., stop=10., length=5))
 5-element Array{Float64,1}:
    10.0
  1778.28
@@ -329,7 +329,7 @@ julia> step(1:2:10)
 julia> step(2.5:0.3:10.9)
 0.3
 
-julia> step(linspace(2.5,10.9,85))
+julia> step(range(2.5, stop=10.9, length=85))
 0.1
 ```
 """

@@ -250,7 +250,7 @@ end
 
 Determine the upper bound of a type parameter in the underlying type. E.g.:
 ```jldoctest
-julia> immutable Foo{T<:AbstractFloat, N}
+julia> struct Foo{T<:AbstractFloat, N}
            x::Tuple{T, N}
        end
 
@@ -865,7 +865,7 @@ Determine whether the given generic function has a method matching the given
 `Tuple` of argument types.
 
 ```jldoctest
-julia> method_exists(length, Tuple{Array})
+julia> hasmethod(length, Tuple{Array})
 true
 ```
 """
