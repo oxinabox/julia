@@ -153,7 +153,7 @@ function pmap(f, p::AbstractWorkerPool, c; distributed=true, batch_size=1, on_er
 end
 
 pmap(f, p::AbstractWorkerPool, c1, c...; kwargs...) = pmap(a->f(a...), p, zip(c1, c...); kwargs...)
-pmap(f, c; kwargs...) = pmap(f, CachingPool(), c; kwargs...)
+pmap(f, c; kwargs...) = pmap(f, CachingPool(workers()), c; kwargs...)
 pmap(f, c1, c...; kwargs...) = pmap(a->f(a...), zip(c1, c...); kwargs...)
 
 function wrap_on_error(f, on_error; capture_data=false)
